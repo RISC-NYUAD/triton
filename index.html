@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TRITON: Trash Retrieval and Intelligent Technology for Oceanic Neatness</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<!-- <nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-menu">
+    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+      <a class="navbar-item" href="https://keunhong.com">
+      <span class="icon">
+          <i class="fas fa-home"></i>
+      </span>
+      </a>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          More Research
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="https://hypernerf.github.io">
+            HyperNeRF
+          </a>
+          <a class="navbar-item" href="https://nerfies.github.io">
+            Nerfies
+          </a>
+          <a class="navbar-item" href="https://latentfusion.github.io">
+            LatentFusion
+          </a>
+          <a class="navbar-item" href="https://photoshape.github.io">
+            PhotoShape
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav> -->
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">TRITON: Trash Retrieval and Intelligent Technology for Oceanic Neatness</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/abanesjo2002/">John Abanes</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/hyunjin-jang-76b285194/">Harry Jang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/jana-awadalla-004824243/">Jana Awadalla</a><sup>1</sup>
+            </span>
+            <span class="author-block">
+              <a href="https://nyuad.nyu.edu/en/academics/divisions/engineering/faculty/anthony-tzes.html">Anthony Tzes</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Mechanical Engineering Undergraduate</span>
+            <span class="author-block"><sup>2</sup>Professor and Electrical Engineering Program Head</span>
+            <span class="author-block"><i>New York University Abu Dhabi</i></span>
+          </div>
+
+          <div class="columns is-centered is-vcentered is-mobile" style="margin-top: 0.5rem; margin-bottom: 0.5rem;">
+            <div class="column is-narrow">
+              <img src="./static/images/cair_logo.png" alt="CAIR Logo" style="height: 75px;">
+            </div>
+            <div class="column is-narrow">
+              <img src="./static/images/abudhabi_color.png" alt="NYU Abu Dhabi Logo" style="height: 50px;">
+            </div>
+          </div>
+
+          <div class="column has-text-centered" style="margin-top: 0.5rem;">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/pdf/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline>
+        <source src="./static/videos/thumbnail.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Wide-Angled Bottom View running YOLO11 for efficient debris detection.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- 
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            TRITON (Trash Retrieval and Intelligent Technology for Oceanic Neatness) represents an innovative autonomous solution for marine debris collection and removal. This project addresses the growing environmental concern of oceanic pollution through applied robotics technology.
+          </p>
+          <p>
+            The system integrates a twin-hull catamaran design with a motorized conveyor belt collection mechanism capable of retrieving multiple types of debris. Advanced navigation capabilities are achieved through a combination of 2D LiDAR, visual odometry, and dual IMU sensors that enable accurate SLAM (Simultaneous Localization and Mapping) and obstacle avoidance in marine environments..
+          </p>
+          <p>
+            Key achievements include the development of a robust autonomous vehicle weighing 120kg with dimensions of 1.6m × 2.7m × 1.0m, capable of operating at 1.0m/s and 15 deg/s with a 2.3-hour battery life. The debris detection system achieves a mean average precision of 0.95 using custom-trained YOLOv11 models, while the collection mechanism can process up to 20 debris items per minute under optimal conditions. The completed prototype demonstrates a commercially viable solution that could be scaled for real-world deployment in marine cleanup operations.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <!-- <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div> -->
+        <p>
+          (Video is a work in progress)
+        </p>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">System Design</h2>
+    <div class="columns is-centered is-multiline">
+      <div class="column is-full">
+        <div class="content has-text-justified">
+          <p>
+            An overview of the various components and communication protocols are shown in the systems diagram below.
+          </p>
+        </div>
+      </div>
+      <div class="column is-four-fifths has-text-centered">
+        <img src="./static/images/system_design.png" alt="System Design Overview">
+      </div>
+    </div>
+    <div class="tabs is-centered is-boxed">
+      <ul>
+        <li class="is-active" data-tab="mechanical"><a>Mechanical Structure</a></li>
+        <li data-tab="electrical"><a>Electrical Networking and Design</a></li>
+        <li data-tab="autonomous"><a>Autonomous Algorithm</a></li>
+      </ul>
+    </div>
+
+    <div class="tab-content is-active" id="mechanical">
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-4">CAD Model</h2>
+          <!-- Add content for Mechanical Structure here -->
+            <p>
+              The design of the system is initially created using SOLIDWORKS. This model is then used to create a Unified Robot Description Format (URDF) file, which then enables testing of the robot via simulators such as Gazebo and NVIDIA Isaac SIM.
+            </p>
+
+            <div class="columns is-centered is-multiline">
+              <div class="column is-one-third has-text-centered">
+                <figure class="image" style="margin: auto; max-width: 256px;">
+                  <img src="./static/images/solidworks.png" alt="SOLIDWORKS Model">
+                </figure>
+                <p class="has-text-weight-semibold">SOLIDWORKS Model</p>
+              </div>
+              <div class="column is-one-third has-text-centered">
+                <figure class="image" style="margin: auto; max-width: 256px;">
+                  <img src="./static/images/rviz.png" alt="TF Rigging and RViz Visualization">
+                </figure>
+                <p class="has-text-weight-semibold">TF Rigging and RViz<br>Visualization</p>
+              </div>
+              <div class="column is-one-third has-text-centered">
+                <figure class="image" style="margin: auto; max-width: 256px;">
+                  <img src="./static/images/simulated.png" alt="Simulated Physics Model">
+                </figure>
+                <p class="has-text-weight-semibold">Simulated Physics Model</p>
+              </div>
+            </div>
+
+            <p>
+              sfa
+            </p>
+
+            <div class="columns is-centered">
+            <div class="column is-full">
+              <p>
+              Various measurements of the physical system are noted below.
+              </p>
+                <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                  <thead>
+                    <tr>
+                      <th colspan="2" class="has-text-centered">Parameters and Measurements</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Mass</td>
+                      <td>120 kg</td>
+                    </tr>
+                    <tr>
+                      <td>Dimensions</td>
+                      <td>Width: 1.6 m<br>Length: 2.8 m<br>Height: 2.0 m</td>
+                    </tr>
+                    <tr>
+                      <td>Peak Power Consumption</td>
+                      <td>480 W</td>
+                    </tr>
+                    <tr>
+                      <td>Operating Time (peak)</td>
+                      <td>2.3 Hours</td>
+                    </tr>
+                    <tr>
+                      <td>Peak Velocity</td>
+                      <td>Linear: 1m/s<br>Angular: 15 deg/s</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+    </div>
+
+    <div class="tab-content" id="electrical">
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Electrical Networking and Design</h2>
+          <!-- Add content for Electrical Networking and Design here -->
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+    </div>
+
+    <div class="tab-content" id="autonomous">
+      <!-- Visual Effects. -->
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Autonomous Algorithm</h2>
+          <!-- Add content for Autonomous Algorithm here -->
+        </div>
+      </div>
+      <!--/ Visual Effects. -->
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{abanes2025triton,
+  author     = {Abanes, John and Jang, Jang and Awadalla, Jana and Tzes, Anthony},
+  title      = {TRITON: Trash Retrieval and Intelligent Technology for Oceanic Neatness},
+  conference = {IEEE Dubai 19th Student Day Conference},
+  year       = {2025},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This website template is ported from <a href="https://nerfies.github.io/">Nerfies</a>. We thank <a href="https://github.com/keunhong">Keunhong Park</a> for open-sourcing the website template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
