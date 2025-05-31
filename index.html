@@ -127,7 +127,7 @@
                 </a>
               </span> -->
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -135,9 +135,9 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -145,16 +145,16 @@
                   </span>
                   <span>Code</span>
                   </a>
-              </span>
+              </span> -->
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href=""
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
                   <span>Data</span>
-                </a>
+                </a> -->
             </div>
           </div>
         </div>
@@ -525,26 +525,85 @@
            </p>
            
            <p> The video below shows the raw video feed which contains dual fisheye images</p>
-
+           <div class="columns is-centered">
+            <div class="column is-four-fifths has-text-centered">
+              <div class="publication-video">
+                <iframe src="https://www.youtube.com/embed/MSJzVB9d230?autoplay=1&mute=1"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
+            
            <p> The video below shows the processed equirectangular images</p>
+           <div class="columns is-centered">
+            <div class="column is-four-fifths has-text-centered">
+              <div class="publication-video">
+                <iframe src="https://www.youtube.com/embed/xwJ0yyPnZ4g?autoplay=1&mute=1"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
 
            <p> The video below shows the cubemap representation of the equirectangular images</p>
+           <div class="columns is-centered">
+            <div class="column is-four-fifths has-text-centered">
+              <div class="publication-video">
+                <iframe src="https://www.youtube.com/embed/XTD5Vn7jBo4?autoplay=1&mute=1"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
 
            <p> Since we do not care about certain views, we instead go for a wide-angled view of the bottom which is facing the water surface. This is directly obtained from the equirectangular image representation and it skips the cubemap representation.</p>
+           <div class="columns is-centered">
+            <div class="column is-four-fifths has-text-centered">
+              <div class="publication-video">
+                <iframe src="https://www.youtube.com/embed/qgp1YZhpx6E?autoplay=1&mute=1"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+            </div>
+          </div>
            
            <h2 class="title is-4">Object Detection</h2>
            <p>
-            For our object detection model, we fine-tuned YOLOv11 on images of cans and bottles, as well as potential non-debris entities such as humans.       
+            For our object detection model, we fine-tuned YOLOv11 on images of cans and bottles, as well as potential non-debris entities such as humans. The video at the top page already showcases this for the wide view bottom representation. Below is us applying it to the cubemap representation.       
            </p>
+            <div class="columns is-centered">
+            <div class="column is-four-fifths has-text-centered">
+              <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/B7wU1nSogtM?autoplay=1&mute=1"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+              </div>
+              <p class="has-text-weight-semibold">YOLOv11 on cubemap image representation</p>
+            </div>
+          </div>
 
            <h2 class="title is-4">Navigation</h2>
            <p> 
             We use sensor fusion in order to obtain a detailed pose estimate of our robot. The image below shows our pipeline.
           </p>
-          <!-- insert static/images/mapping_pipeline.png -->
+          <div class="columns is-centered">
+            <div class="column is-four-fifths has-text-centered">
+              <figure class="image" style="margin: auto;">
+                <img src="./static/images/mapping_pipeline.png" alt="Mapping Pipeline">
+              </figure>
+              <p class="has-text-weight-semibold">Mapping Pipeline</p>
+            </div>
+          </div>
            <p>
             As of now, we have integrated up to the Visual Inertial Navigation System (VINS) portion. We demonstrate this by performing odometry estimation with just the 360 camera in a handheld configuration, so our sensors only include dual fisheye and gyroscope. The dual fisheye images are converted to equirectangular in real time, as seen in the video below.
            </p>
+           <div class="columns is-centered">
+            <div class="column is-four-fifths has-text-centered">
+              <div class="publication-video">
+                <video autoplay muted controls style="width: 100%; height: auto; display: block;">
+                  <source src="./static/videos/VINS.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <p class="has-text-weight-semibold">VINS Demonstration</p>
+            </div>
+          </div>
         </div>
       </div>
       <!--/ Visual Effects. -->
