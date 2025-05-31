@@ -258,21 +258,62 @@
     <!--/ Abstract. -->
 
     <!-- Paper video. -->
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
+      <!-- <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2> -->
         <!-- <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div> -->
-        <p>
+        <!-- <p>
           (Video is a work in progress)
-        </p>
+        </p> -->
       </div>
     </div>
     <!--/ Paper video. -->
   </div>
 </section>
 
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Simulation</h2>
+    <p>
+      For this project, we have developed simulations using two of the most popular simulation tools that can utilize ROS2: Gazebo and NVIDIA Isaac SIM. Both simulations enable the creation of virtual 360-degree cameras, LiDAR, and IMU to test out our system design.
+    </p>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/5YG9xsNjLY8?autoplay=1&mute=1"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <p class="has-text-weight-semibold">Gazebo Simulation</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/yhOGp-CC524?autoplay=1&mute=1"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <p class="has-text-weight-semibold">NVIDIA Isaac SIM Simulation</p>
+      </div>
+    </div>
+    <p>
+      The video below shows the SLAM algorithm working in NVIDIA Isaac SIM. Note that this takes place in a different environment from the previous video, which was simply an open area.
+    </p>
+    <div class="columns is-centered">
+      <div class="column is-four-fifths has-text-centered">
+        <div class="publication-video">
+          <video autoplay muted controls style="width: 100%; height: auto; display: block;">
+            <source src="./static/videos/isaac_sim.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <p class="has-text-weight-semibold">Isaac SIM with SLAM and rectified front image view</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -280,14 +321,6 @@
     <div class="columns is-centered is-multiline">
       <div class="column is-full">
         <div class="content has-text-justified">
-          <p>
-            An overview of the various components and communication protocols are shown in the systems diagram below.
-          </p>
-        </div>
-      </div>
-      <div class="column is-four-fifths has-text-centered">
-        <img src="./static/images/system_design.png" alt="System Design Overview">
-      </div>
     </div>
     <div class="tabs is-centered is-boxed">
       <ul>
@@ -327,15 +360,42 @@
                 <p class="has-text-weight-semibold">Simulated Physics Model</p>
               </div>
             </div>
-
+            <h2 class="title is-4">System Prototype</h2>
             <p>
-              
+              The system is then built with the features illustrated in the images below.
             </p>
 
+            <div class="columns is-centered is-multiline">
+              <div class="column is-half has-text-centered">
+                <figure class="image" style="margin: auto;">
+                  <img src="./static/images/front_annotated.png" alt="Frontal View">
+                </figure>
+                <p class="has-text-weight-semibold">Frontal View</p>
+              </div>
+              <div class="column is-half has-text-centered">
+                <figure class="image" style="margin: auto;">
+                  <img src="./static/images/side_annotated.png" alt="Side View">
+                </figure>
+                <p class="has-text-weight-semibold">Side View</p>
+              </div>
+            </div>
+
+            <p>
+              We also take steps to ensure that the system has good build quality. This includes having waterproof electrical connections, having and having fully welded joints.
+            </p>
+            <div class="columns is-centered">
+              <div class="column is-narrow">
+                <figure class="image" style="max-width: 450px; margin-left: auto; margin-right: auto;">
+                  <img src="./static/images/mechanical_features.png" alt="Mechanical Features">
+                </figure>
+                <p class="has-text-weight-semibold has-text-centered">Mechanical Features</p>
+              </div>
+            </div>
+            <h2 class="title is-4">Parameters and Measurements</h2>
             <div class="columns is-centered">
             <div class="column is-full">
               <p>
-              Various measurements of the physical system are noted below.
+              Various measurements of the physical system are summarized below.
               </p>
                 <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
                   <thead>
@@ -368,6 +428,32 @@
                 </table>
               </div>
             </div>
+            <p>Below is a video showcasing the speed of the conveyor belt.</p>
+            <div style="max-width: 30%; margin: 0 auto;">
+              <video autoplay muted controls style="width: 100%; height: auto; display: block;">
+                <source src="./static/videos/conveyor.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            <p>The videos below showcase the water dynamics of the vehicle.</p>
+            <div class="columns is-centered is-vcentered">
+              <div class="column is-half has-text-centered">
+                <video autoplay muted controls style="width: 100%; height: auto; display: block;">
+                  <source src="./static/videos/linear.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-weight-semibold">Linear Dynamics. Linear Velocity is 1 m/s</p>
+              </div>
+              <div class="column is-half has-text-centered">
+                <video autoplay muted controls style="width: 100%; height: auto; display: block;">
+                  <source src="./static/videos/angular.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <p class="has-text-weight-semibold">Angular Dynamics. Angular Velocity is 15 deg/s</p>
+              </div>
+            </div>
+
         </div>
       </div>
       <!--/ Visual Effects. -->
@@ -377,9 +463,54 @@
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Electrical Networking and Design</h2>
+          <h2 class="title is-4">Network Design</h2>
           <!-- Add content for Electrical Networking and Design here -->
+           <p>
+            An overview of the various components and communication protocols are shown in the systems diagram below.
+          </p>
         </div>
+      </div>
+      <div class="column is-four-fifths has-text-centered" style="margin: 0 auto;">
+        <img src="./static/images/system_design.png" alt="System Design Overview">
+        <p class="has-text-weight-semibold">System Network Overview</p>
+      </div>
+      <h2 class="title is-4">Transducer Configuration</h2>
+      <p>
+        We designed our own controller board that includes a built-in gyroscope in order to assist with odometry. The video below demonstrates the gyroscope. In addition, we also extract the acceleration and velocity data from the 360-degree camera to further improve the odometry of the boat.
+      </p>
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-half has-text-centered">
+          <video autoplay muted controls style="height: 250px; width: auto; display: block; margin: 0 auto;">
+            <source src="./static/videos/board_gyro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="has-text-weight-semibold">Angular position using board (BNO055) gyroscope.</p>
+        </div>
+        <div class="column is-half has-text-centered">
+          <video autoplay muted controls style="height: 250px; width: auto; display: block; margin: 0 auto;">
+            <source src="./static/videos/camera_gyro.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p class="has-text-weight-semibold">Angular position using camera gyroscope.</p>
+        </div>
+      </div>
+      <p>
+        The design of the board is shown below, along with an electronics circuit diagram showcasing how it communicates with the other components at a low level.
+      </p>
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-half has-text-centered">
+          <figure class="image" style="display: inline-block;">
+            <img src="./static/images/board.png" alt="Controller Board Model" style="height: 250px; width: auto; display: block;">
+          </figure>
+          <p class="has-text-weight-semibold">Controller Board Model</p>
+        </div>
+        <div class="column is-half has-text-centered">
+          <figure class="image" style="display: inline-block;">
+            <img src="./static/images/electrical.svg" alt="Electric Circuit Configuration" style="height: 250px; width: auto; display: block;">
+          </figure>
+          <p class="has-text-weight-semibold">Electric Circuit Configuration</p>
+        </div>
+      </div>
       </div>
       <!--/ Visual Effects. -->
     </div>
@@ -388,8 +519,32 @@
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Autonomous Algorithm</h2>
-          <!-- Add content for Autonomous Algorithm here -->
+          <h2 class="title is-4">Image processing</h2>
+           <p>
+            The image processing pipeline involves conversion from dual fisheye images to equirectangular. From there, we are able to convert to either a cubemap representation or a wide-angled bottom view representation.          
+           </p>
+           
+           <p> The video below shows the raw video feed which contains dual fisheye images</p>
+
+           <p> The video below shows the processed equirectangular images</p>
+
+           <p> The video below shows the cubemap representation of the equirectangular images</p>
+
+           <p> Since we do not care about certain views, we instead go for a wide-angled view of the bottom which is facing the water surface. This is directly obtained from the equirectangular image representation and it skips the cubemap representation.</p>
+           
+           <h2 class="title is-4">Object Detection</h2>
+           <p>
+            For our object detection model, we fine-tuned YOLOv11 on images of cans and bottles, as well as potential non-debris entities such as humans.       
+           </p>
+
+           <h2 class="title is-4">Navigation</h2>
+           <p> 
+            We use sensor fusion in order to obtain a detailed pose estimate of our robot. The image below shows our pipeline.
+          </p>
+          <!-- insert static/images/mapping_pipeline.png -->
+           <p>
+            As of now, we have integrated up to the Visual Inertial Navigation System (VINS) portion. We demonstrate this by performing odometry estimation with just the 360 camera in a handheld configuration, so our sensors only include dual fisheye and gyroscope. The dual fisheye images are converted to equirectangular in real time, as seen in the video below.
+           </p>
         </div>
       </div>
       <!--/ Visual Effects. -->
@@ -398,7 +553,6 @@
 
   </div>
 </section>
-
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -409,6 +563,16 @@
   conference = {IEEE Dubai 19th Student Day Conference},
   year       = {2025},
 }</code></pre>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>
+      We would like to thank Behruz Erkinov for assisting with the design of the electrical systems as well as Abay Oralov, Dhiyaa Al Jorf, and Firas Darwish for their contributions to our vision system.  Additionally, we would like to thank Nikolaos Evangeliou from NYUAD's Robotics and Intelligent Systems Control Laboratory for his advice on the various electromechanical systems as well as Jorge Montalvo Navarette from the NYUAD Advanced Manufacturing Workshop, Oraib Al-Ketan from the NYUAD Advanced Manufacturing and Electronics Core, and Vijay Dhanvi from the NYUAD Machine Shop for their assistance in 3D printing and manufacturing.
+
+    </p>
   </div>
 </section>
 
